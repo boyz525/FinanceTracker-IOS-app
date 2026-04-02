@@ -5,12 +5,11 @@
 //  Created by Александр Малахов on 31.03.2026.
 //
 
-import Foundation
 import SwiftUI
-import Combine
 
-struct StartScreen: View {
+struct StartView: View {
     @State private var text = ""
+    @Environment(UserSettings.self) private var settings
     var body: some View {
         ZStack{
             AnimatedBackground()
@@ -55,7 +54,7 @@ struct StartScreen: View {
                         .padding(.horizontal, 20)
                         .padding(.bottom, 130)
                     Button("Далее"){
-                        UserSettings.userName = text
+                        settings.saveUserName(text)
                     }
                     .padding(.vertical, 8)
                     .padding(.horizontal, 40)
@@ -79,6 +78,7 @@ struct StartScreen: View {
 
 
 #Preview {
-    StartScreen()
+    StartView()
+        .environment(UserSettings())
 }
 

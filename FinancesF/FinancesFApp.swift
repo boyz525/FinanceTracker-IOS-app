@@ -5,13 +5,18 @@
 //  Created by Александр Малахов on 31.03.2026.
 //
 
+
 import SwiftUI
+import SwiftData
 
 @main
 struct FinancesFApp: App {
+    @State private var settings = UserSettings()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(settings)
         }
+        .modelContainer(for: Transaction.self)
     }
 }

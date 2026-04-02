@@ -2,43 +2,57 @@
 //  HomeView.swift
 //  FinancesF
 //
-//  Created by Александр Малахов on 01.04.2026.
+//  Created by Александр Малахов on 02.04.2026.
 //
 
 import Foundation
 import SwiftUI
-import Charts
-
 
 struct HomeView: View {
+    @Environment(UserSettings.self) private var settings
     var body: some View {
-        ZStack{
+        ZStack {
             AnimatedBackground()
-            
-            VStack(){
-                
-                
-                HStack(){
-                    Text("Welcome back!")
-                        .foregroundStyle(.white)
-                        .font(.title)
-                        .bold()
-                        .padding(.horizontal,20)
-                        .padding(.top,9)
-                    Spacer()
+
+            ScrollView {
+                VStack {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 1) {
+                            Text("Привет, \(settings.userName ?? "Сашка")")
+                                .foregroundStyle(.white)
+                                .font(.title2)
+                                .bold()
+                                .padding(.horizontal, 20)
+                                .padding(.top, 20)
+                            Text("Глянем твои статы 🧐")
+                                .foregroundStyle(.white)
+                                .font(.title3)
+                                .bold()
+                                .padding(.horizontal, 20)
+
+                            DailyBarChartView()
+
+                            Rectangle()
+                                .fill(.white.opacity(0.15))
+                                .frame(height: 1)
+                                .padding(.horizontal, 20)
+
+                            TodaySummaryView()
+                        
+                        }
+                        
+
+                        
+                    }
+                    .glassEffect(.clear, in: RoundedRectangle(cornerRadius: 45))
+                    .frame(width: 350)
+
+                    RecentTransactionsView()
+                        .padding(.top, 12)
                 }
-                //.frame(width: 380, height: 400)
-                .glassEffect(.clear.interactive(), in: RoundedRectangle(cornerRadius: 45))
-                .padding(.top, 70)
-                
-                Spacer()
-                
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
         }
     }
 }
 
-#Preview {
-    HomeView()
-}
