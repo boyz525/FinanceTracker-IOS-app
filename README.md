@@ -8,5 +8,5 @@ Several Liqud elements are located on top of each other. That causes some render
 Some screenshots:
 
 
- <img src="Screen1.png" width="250"> <img src="Screen2.png" width="250"> <img src="Screen3.png" width="250">
- <img src="Screen4.png" width="250"> <img src="Screen5.png" width="250"> <img src="Screen6.png" width="250">
+ <img src="Screen1.png" width="250"> <img src="Screen2.png" width="250"> <img src="Screen3.png" width="250"><img src="Screen4.png" width="250">
+ <img src="Screen5.png" width="250"> <img src="Screen6.png" width="250"> <img src="Screen7.png" width="250">
