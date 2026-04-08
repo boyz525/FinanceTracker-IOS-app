@@ -13,4 +13,4 @@ Some screenshots:
  
  My planning process:
  
-  <img src="Planning.png" width="350"> 
+  <img src="Planning.png" width="700"> 
